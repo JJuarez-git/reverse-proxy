@@ -11,7 +11,7 @@ const options = {
     cert: fs.readFileSync(process.env.CERT),
 };
 
-app.use('/cms/', proxy('http://localhost:1337'));
+app.use('/cms/', proxy('http://localhost:1337/'));
 
 https.createServer(options, app).listen(3000, () => {
     console.log('HTTPS proxy server is running on port 3000');
